@@ -1,5 +1,6 @@
 from datetime import datetime, timezone
 import pytz  
+import streamlit as st
   
 def getStrDate():
     # 获取当前时间（假设服务器时区不是东八区）  
@@ -23,6 +24,7 @@ def getStrDate():
     return  year + month + day
 
 def getPwd():  
+    pwdpre = st.secrets["pwdpre"]
     result = 'HYZ' + getStrDate()  
     return result
 
